@@ -8,7 +8,7 @@ The system enforces business rules such as schedule limits, booking capacity, an
 
 ## Relation Diagram
 
-![Alt text](https://github.com/sshammi/Gym-Management-backend/blob/254bbadcd47ab06a2df9811d94348882e1f575fc/gym-managent.png)
+![Alt text](https://github.com/sshammi/Gym-Management-backend/blob/7755bb309623cb6b5ddf4188d8c5cd6f3d991079/gym-managent.png)
 
 ## Technology Stack
 
