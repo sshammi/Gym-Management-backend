@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "9bef95f8-b1b5-4052-a76b-c18e650f024a",
+		"name": "Gym-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36676131"
+	},
+	"item": [
+		{
+			"name": "User_api",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Trainee Two\",\r\n    \"email\": \"trainee2@gmail.com\",\r\n    \"password\": \"Trainee2\",\r\n    \"role\": \"trainee\",\r\n    \"contactNo\": \"+8801765432109\",\r\n    \"address\": \"Khulna, Bangladesh\",\r\n    \"profileImg\": \"trainer2.jpg\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/users",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\": \"admin@gmail.com\",\r\n   \"password\": \"Admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/users/login",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2ODY1MDM1LCJleHAiOjE3NDY5NTE0MzV9.npSc17ufHNAxggilhDMFNotZ9bhl9RmKFOYvypl4VEE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/users",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzkxMDYyLCJleHAiOjE3NDY4Nzc0NjJ9.y24QMGvjJKahWO5VThZ10QOvJ8NOvZoaolv82H78Y58",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/users/681d86480f0235fc40546a78",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users",
+								"681d86480f0235fc40546a78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZXIxQGd5bS5jb20iLCJyb2xlIjoidHJhaW5lciIsImlkIjoiNjgxZDg2ZTA1MDM1ZGM4MGY1MTg4ZmIyIiwiaWF0IjoxNzQ2Nzk0MDU3LCJleHAiOjE3NDY4ODA0NTd9.OKc1q7LwByxD1U8xoMwbmGoQkf6Is6l7hCvuqj3Iehs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n  \"name\":\"Trainer Alis\",\r\n  \"email\":\"trainer1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/users/681d86e05035dc80f5188fb2",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users",
+								"681d86e05035dc80f5188fb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2Nzk0MjU2LCJleHAiOjE3NDY4ODA2NTZ9.vu2pz3N2wSCWfVloFvI6Qd7iJgJSSvHs3KHFu3zsfwo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n  \"name\":\"Trainer Alis\",\r\n  \"email\":\"trainer1@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{gym-url}}/users/681d9e63e894f5f98cabe316",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"users",
+								"681d9e63e894f5f98cabe316"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "schedule",
+			"item": [
+				{
+					"name": "create-schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzY1NjUyLCJleHAiOjE3NDY4NTIwNTJ9.czs28JNQOSwMQ2hgZvLY5sUAe6__YRdcE0SIG5aySCg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Strength Training\",\r\n    \"description\": \"Full-body strength workout using weights.\",\r\n    \"startTime\": \"2025-05-09T10:30:00.000Z\",\r\n    \"endTime\": \"2025-05-09T12:30:00.000Z\",\r\n    \"trainerId\": \"681da1388dbfcdcfd08101b7\",\r\n    \"maxCapacity\": 10,\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/schedules",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-schedule",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzY1NjUyLCJleHAiOjE3NDY4NTIwNTJ9.czs28JNQOSwMQ2hgZvLY5sUAe6__YRdcE0SIG5aySCg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startTime\": \"2025-05-10T10:00:00.000Z\",\r\n  \"endTime\": \"2025-05-10T12:00:00.000Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/schedules/681dc9cbcb74c8892837f58c",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules",
+								"681dc9cbcb74c8892837f58c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzgyNjExLCJleHAiOjE3NDY4NjkwMTF9.3zyksXDHSmzBpI2rWrCzx5eV-xg3EGyDv2C2Wp24vBc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/schedules/681da1588dbfcdcfd08101bc",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules",
+								"681da1588dbfcdcfd08101bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-schedeule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzgyNjExLCJleHAiOjE3NDY4NjkwMTF9.3zyksXDHSmzBpI2rWrCzx5eV-xg3EGyDv2C2Wp24vBc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/schedules",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-schedule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzgyNjExLCJleHAiOjE3NDY4NjkwMTF9.3zyksXDHSmzBpI2rWrCzx5eV-xg3EGyDv2C2Wp24vBc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/schedules/681dc9cbcb74c8892837f58c",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules",
+								"681dc9cbcb74c8892837f58c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-trainer-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZXIyQGd5bS5jb20iLCJyb2xlIjoidHJhaW5lciIsImlkIjoiNjgxZGExMzg4ZGJmY2RjZmQwODEwMWI3IiwiaWF0IjoxNzQ2NzgzMTU0LCJleHAiOjE3NDY4Njk1NTR9.0fsvzeDTpJi2VPROFfmXkGRGxmDecuEsPG-lQx4i5Cs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gym-url}}/schedules/trainer/681da1388dbfcdcfd08101b7",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"schedules",
+								"trainer",
+								"681da1388dbfcdcfd08101b7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create-booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUxQGdtYWlsLmNvbSIsInJvbGUiOiJ0cmFpbmVlIiwiaWQiOiI2ODFkODcxNDUwMzVkYzgwZjUxODhmYjUiLCJpYXQiOjE3NDY3ODYyMTgsImV4cCI6MTc0Njg3MjYxOH0.61ChxS9tvpvFqZqHD7_bl33hcfmxx9wWhOHgX0XFGc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681dc9cbcb74c8892837f58c\",\r\n  \"status\": \"booked\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-request",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUxQGdtYWlsLmNvbSIsInJvbGUiOiJ0cmFpbmVlIiwiaWQiOiI2ODFkODcxNDUwMzVkYzgwZjUxODhmYjUiLCJpYXQiOjE3NDY3ODYyMTgsImV4cCI6MTc0Njg3MjYxOH0.61ChxS9tvpvFqZqHD7_bl33hcfmxx9wWhOHgX0XFGc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681dc9cbcb74c8892837f58c\",\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings/681ddf534bf50c608c540fea",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings",
+								"681ddf534bf50c608c540fea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUxQGdtYWlsLmNvbSIsInJvbGUiOiJ0cmFpbmVlIiwiaWQiOiI2ODFkODcxNDUwMzVkYzgwZjUxODhmYjUiLCJpYXQiOjE3NDY3ODYyMTgsImV4cCI6MTc0Njg3MjYxOH0.61ChxS9tvpvFqZqHD7_bl33hcfmxx9wWhOHgX0XFGc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681dc9cbcb74c8892837f58c\",\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings/681de7f108d3be4b1c9ec4c3",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings",
+								"681de7f108d3be4b1c9ec4c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-own-booking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRyYWluZWUxQGdtYWlsLmNvbSIsInJvbGUiOiJ0cmFpbmVlIiwiaWQiOiI2ODFkODcxNDUwMzVkYzgwZjUxODhmYjUiLCJpYXQiOjE3NDY3ODYyMTgsImV4cCI6MTc0Njg3MjYxOH0.61ChxS9tvpvFqZqHD7_bl33hcfmxx9wWhOHgX0XFGc0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681d9526d0169ec148b265c7\",\r\n  \"status\": \"booked\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings/my-bookings/681d9e63e894f5f98cabe316",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings",
+								"my-bookings",
+								"681d9e63e894f5f98cabe316"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-by-admin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzkxMDYyLCJleHAiOjE3NDY4Nzc0NjJ9.y24QMGvjJKahWO5VThZ10QOvJ8NOvZoaolv82H78Y58",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681d9526d0169ec148b265c7\",\r\n  \"status\": \"booked\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzkxMDYyLCJleHAiOjE3NDY4Nzc0NjJ9.y24QMGvjJKahWO5VThZ10QOvJ8NOvZoaolv82H78Y58",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681d9526d0169ec148b265c7\",\r\n  \"status\": \"booked\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings/681de8a213133bdfdf19a49f",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings",
+								"681de8a213133bdfdf19a49f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-schedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlkIjoiNjgxZDg2NDgwZjAyMzVmYzQwNTQ2YTc4IiwiaWF0IjoxNzQ2NzkxMDYyLCJleHAiOjE3NDY4Nzc0NjJ9.y24QMGvjJKahWO5VThZ10QOvJ8NOvZoaolv82H78Y58",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"traineeId\": \"681d9e63e894f5f98cabe316\",\r\n  \"scheduleId\": \"681d9526d0169ec148b265c7\",\r\n  \"status\": \"booked\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{gym-url}}/bookings/schedule/681d9526d0169ec148b265c7",
+							"host": [
+								"{{gym-url}}"
+							],
+							"path": [
+								"bookings",
+								"schedule",
+								"681d9526d0169ec148b265c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
