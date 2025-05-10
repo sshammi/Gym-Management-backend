@@ -8,7 +8,7 @@ The system enforces business rules such as schedule limits, booking capacity, an
 
 ## Relation Diagram
 
-![Alt text](https://github.com/sshammi/Gym-Management-backend/blob/254bbadcd47ab06a2df9811d94348882e1f575fc/gym-managent.png)
+![Alt text](https://github.com/sshammi/Gym-Management-backend/blob/7755bb309623cb6b5ddf4188d8c5cd6f3d991079/gym-managent.png)
 
 ## Technology Stack
 
@@ -33,38 +33,39 @@ The system enforces business rules such as schedule limits, booking capacity, an
 
 ### User Management
 
-| Method | Endpoint | Description | Access
-|-----|-----|-----|-----
-| POST | /api/users | Create user | Public
-| GET | /api/users | Get all users | Admin
-| GET | /api/users/:id | Get user by ID | Admin, Self
-| PATCH | /api/users/:id | Update user | Admin, Self
-| DELETE | /api/users/:id | Delete user | Admin
+| Method | Endpoint         | Description       | Access            |
+|--------|------------------|-------------------|-------------------|
+| POST   | /api/users/login | Login user        | Public            |
+| POST   | /api/users       | Create user       | Public            |
+| GET    | /api/users       | Get all users     | Admin             |
+| GET    | /api/users/:id   | Get user by ID    | Admin, Trainer, Trainee, Self |
+| PATCH  | /api/users/:id   | Update user       | Admin, Trainer, Trainee, Self |
+| DELETE | /api/users/:id   | Delete user       | Admin             |
 
 
 ### Class Schedule Management
 
-| Method | Endpoint | Description | Access
-|-----|-----|-----|-----
-| POST | /api/schedules | Create class schedule | Admin
-| GET | /api/schedules | Get all schedules | All Authenticated
-| GET | /api/schedules/:id | Get schedule by ID | All Authenticated
-| PATCH | /api/schedules/:id | Update schedule | Admin
-| DELETE | /api/schedules/:id | Delete schedule | Admin
-| GET | /api/schedules/trainer/:trainerId | Get schedules by trainer | Admin, Trainer
+| Method | Endpoint                         | Description               | Access                  |
+|--------|----------------------------------|---------------------------|-------------------------|
+| POST   | /api/schedules                   | Create class schedule     | Admin                   |
+| GET    | /api/schedules                   | Get all schedules         | Admin, Trainer, Trainee |
+| GET    | /api/schedules/:id               | Get schedule by ID        | Admin, Trainer, Trainee |
+| PATCH  | /api/schedules/:id               | Update schedule           | Admin                   |
+| DELETE | /api/schedules/:id               | Delete schedule           | Admin                   |
+| GET    | /api/schedules/trainer/:trainerId| Get schedules by trainer  | Admin, Trainer          |
 
 
 ### Booking Management
 
-| Method | Endpoint | Description | Access
-|-----|-----|-----|-----
-| POST | /api/bookings | Create booking | Trainee
-| GET | /api/bookings | Get all bookings | Admin
-| GET | /api/bookings/:id | Get booking by ID | Admin, Trainee
-| PATCH | /api/bookings/:id | Update booking status | Trainee
-| DELETE | /api/bookings/:id | Delete booking | Trainee
-| GET | /api/bookings/my-bookings | Get trainee's bookings | Trainee
-| GET | /api/bookings/schedule/:scheduleId | Get bookings by schedule | Admin, Trainer
+| Method | Endpoint                              | Description               | Access            |
+|--------|---------------------------------------|---------------------------|-------------------|
+| POST   | /api/bookings                         | Create booking            | Trainee           |
+| GET    | /api/bookings                         | Get all bookings          | Admin             |
+| GET    | /api/bookings/:id                     | Get booking by ID         | Admin, Trainee    |
+| PATCH  | /api/bookings/:id                     | Update booking status     | Trainee           |
+| DELETE | /api/bookings/:id                     | Delete booking            | Trainee           |
+| GET    | /api/bookings/my-bookings/:traineeId  | Get trainee's bookings    | Trainee           |
+| GET    | /api/bookings/schedule/:scheduleId    | Get bookings by schedule  | Admin, Trainer    |
 
 
 ## API Response Format
